@@ -15,15 +15,22 @@ const ProductImage = () => {
       <div className="product-image_frame">
         <img src={selectedImage} alt="Selected Product" />
       </div>
+
       <div className="product-image_thumbnail">
         {Data.thumbnails.map((image, index) => (
-          <img
+          <div
             key={index}
-            src={image}
-            alt={`Thumbnail ${index + 1}`}
-            className={`thumbnail ${activeIndex === index ? "active" : ""}`}
-            onClick={() => handleThumbnailClick(image, index)}
-          />
+            className={`product-image_thumbnail--wrapper ${
+              activeIndex === index ? "active" : ""
+            }`}
+          >
+            <img
+              src={image}
+              alt={`Thumbnail ${index + 1}`}
+              className="thumbnail"
+              onClick={() => handleThumbnailClick(image, index)}
+            />
+          </div>
         ))}
       </div>
     </div>

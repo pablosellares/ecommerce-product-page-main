@@ -25,16 +25,31 @@ padding: 90px 24px;
     display: flex;
     justify-content: space-between;
 
-    img {
-      border-radius: 16px;
+    &--wrapper {
+      border-radius: 18px;
+      display: flex;
+      height: 90px;
+      justify-content: center;
       width: 90px;
 
       &.active {
-      border: 2px solid ${({ theme }) => theme.colors.primary.orange};
-      opacity: 0.5
-    }
+        border: 2px solid ${({ theme }) => theme.colors.primary.orange};
+
+        img {
+          opacity: 0.5;
+        }
     }
 
+      img {
+      border-radius: 16px;
+      transition: all 125ms ease-in-out;
+      width: 90px;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+    }
   }
 }
 
