@@ -1,4 +1,21 @@
+import { useState } from "react";
+
 const ProductInfo = () => {
+  const [count, setCount] = useState(0);
+
+  const handleIncrease = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const handleDecrease = () => {
+    setCount((prevCount) => {
+      if (prevCount > 0) {
+        return prevCount - 1;
+      }
+      return prevCount;
+    });
+  };
+
   return (
     <div className="product-info">
       <span className="product-info_company">Sneaker Company</span>
@@ -17,16 +34,17 @@ const ProductInfo = () => {
       </div>
       <div className="product-info_actions">
         <div className="qty">
-          <button className="qty-decrease">
+          <button className="qty-decrease" onClick={handleDecrease}>
             <img src="src/assets/icon-minus.svg" alt="" />
           </button>
-          <input
+          {/* <input
             type="number"
             name="input-total"
             id="qty-total"
             placeholder="0"
-          />
-          <button className="qty-increase">
+          /> */}
+          <span className="counter">{count}</span>
+          <button className="qty-increase" onClick={handleIncrease}>
             <img src="src/assets/icon-plus.svg" alt="" />
           </button>
         </div>

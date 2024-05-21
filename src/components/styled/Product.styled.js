@@ -123,20 +123,15 @@ padding: 90px 24px;
       height: 100%;
       width: 160px;
 
-      input[type="number"] {
+      .counter {
+        align-items: center;
         color: ${({ theme }) => theme.colors.neutral.black};
+        display: flex;
         font-weight: 700;
         height: 100%;
+        justify-content: center;
         text-align: center;
         width: 50%;
-
-        &::placeholder {
-          color: ${({ theme }) => theme.colors.neutral.black};
-        }
-
-        &:focus {
-          outline: none;
-        }
       }
 
       &-decrease,
