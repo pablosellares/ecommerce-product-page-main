@@ -11,7 +11,8 @@ Below is the readme from Frontend Mentor.
 
 # Frontend Mentor - E-commerce product page
 
-![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
+![Design preview for the E-commerce product page coding challenge](../ecommerce-product-page-main
+/design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
