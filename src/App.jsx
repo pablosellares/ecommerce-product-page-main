@@ -5,8 +5,8 @@ import GlobalStyles from "./components/styled/Global";
 import Header from "./components/header/Header";
 import Product from "./components/product/Product";
 import MiniCart from "./components/cart/MiniCart";
-import Data from "./components/product/Data";
 import Modal from "./components/modal/Modal";
+import Data from "./components/product/Data";
 
 const theme = {
   colors: {
@@ -31,6 +31,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [hasQuantity, setHasQuantity] = useState(false);
   const [isCartActive, setIsCartActive] = useState(false);
+  const [isModalActive, setIsModalActive] = useState(false);
 
   const addToCart = (product) => {
     setCartItems([product]);
@@ -53,11 +54,20 @@ function App() {
     setCartItems([]);
   };
 
+  const handleModal = () => {
+    if (!isModalActive) {
+      setIsModalActive(true);
+    } else {
+      setIsModalActive(false);
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <>
-        <Modal />
+        {isModalActive ? <Modal handleModal={handleModal} /> : ""}
+
         <Container>
           <Header
             addToCart={addToCart}
@@ -73,7 +83,11 @@ function App() {
           ) : (
             ""
           )}
-          <Product product={Data} addToCart={addToCart} />
+          <Product
+            product={Data}
+            addToCart={addToCart}
+            handleModal={handleModal}
+          />
         </Container>
       </>
     </ThemeProvider>

@@ -3,10 +3,10 @@ import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import Data from "./Data";
 
-const Product = ({ addToCart }) => {
+const Product = ({ addToCart, handleModal }) => {
   return (
     <StyledProduct>
-      <ProductImage />
+      <ProductImage handleModal={handleModal} />
       <ProductInfo product={Data} addToCart={addToCart} />
     </StyledProduct>
   );

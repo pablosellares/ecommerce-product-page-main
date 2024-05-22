@@ -11,6 +11,7 @@ padding: 90px 24px;
   width: 50%;
   
   &_frame {
+    cursor: pointer;
     margin-bottom: 32px;
     width: 100%;
 

@@ -1,11 +1,11 @@
 import ProductImage from "../product/ProductImage";
 import { StyledModal } from "../styled/Modal.styled";
 
-const Modal = () => {
+const Modal = ({ handleModal }) => {
   return (
     <StyledModal>
       <ProductImage />
-      <div className="btn-close"></div>
+      <div className="btn-close" onClick={handleModal}></div>
     </StyledModal>
   );
 };
