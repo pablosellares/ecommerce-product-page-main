@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import Cart from "./Cart";
 import Indicator from "./Indicator";
 
-const Header = ({ addToCart, handleCart }) => {
+const Header = ({ addToCart, cartItems, handleCart }) => {
   return (
     <StyledHeader>
       <div className="header-left">
@@ -13,7 +13,11 @@ const Header = ({ addToCart, handleCart }) => {
         <Nav />
       </div>
       <div className="header-right">
-        <Indicator addToCart={addToCart} />
+        <Indicator
+          addToCart={addToCart}
+          cartItems={cartItems}
+          handleCart={handleCart}
+        />
         <Cart handleCart={handleCart} />
         <Avatar />
       </div>

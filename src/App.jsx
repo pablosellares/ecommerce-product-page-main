@@ -57,7 +57,11 @@ function App() {
       <GlobalStyles />
       <>
         <Container>
-          <Header addToCart={addToCart} handleCart={handleCart} />
+          <Header
+            addToCart={addToCart}
+            handleCart={handleCart}
+            cartItems={cartItems}
+          />
           {isCartActive ? (
             <MiniCart
               cartItems={cartItems}

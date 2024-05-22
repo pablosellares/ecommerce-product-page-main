@@ -74,11 +74,15 @@ export const StyledHeader = styled.header`
 
     .indicator {
       background-color: ${({ theme }) => theme.colors.primary.orange};
-      border-radius: 50%;
-      height: 8px;
+      border-radius: 8px;
+      color: ${({ theme }) => theme.colors.neutral.white};
+      cursor: pointer;
+      font-size: 10px;
+      margin-left: -8px;
       position: absolute;
+      text-align: center;
       transform: translate(16px, -8px);
-      width: 8px;
+      width: 16px;
     }
 
     .cart {

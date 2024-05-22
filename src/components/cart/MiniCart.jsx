@@ -19,7 +19,7 @@ const MiniCart = ({ cartItems, handleCheckout, handleDelete }) => {
                 />
                 <div className="cart-description">
                   {item.name} - ${item.price} x {item.quantity}{" "}
-                  <b>${item.price * item.quantity}</b>
+                  <b>${item.price * item.quantity}.00</b>
                 </div>
                 <div className="cart-delete" onClick={handleDelete}>
                   <img

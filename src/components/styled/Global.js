@@ -26,6 +26,11 @@ button {
   border: none;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 input[type="number"] {
   background-color: transparent;
   border: none;
