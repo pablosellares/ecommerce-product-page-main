@@ -11,6 +11,7 @@ const theme = {
   colors: {
     primary: {
       orange: "hsl(26, 100%, 55%)",
+      orangeHover: "hsl(26, 100%, 45%)",
       paleOrange: "hsl(25, 100%, 94%)",
     },
     neutral: {
@@ -31,7 +32,7 @@ function App() {
   const [isCartActive, setIsCartActive] = useState(false);
 
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+    setCartItems([product]);
     setHasQuantity(true);
   };
 
@@ -43,13 +44,29 @@ function App() {
     }
   };
 
+  const handleDelete = () => {
+    setCartItems([]);
+  };
+
+  const handleCheckout = () => {
+    setCartItems([]);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <>
         <Container>
           <Header addToCart={addToCart} handleCart={handleCart} />
-          {isCartActive ? <MiniCart cartItems={cartItems} /> : ""}
+          {isCartActive ? (
+            <MiniCart
+              cartItems={cartItems}
+              handleCheckout={handleCheckout}
+              handleDelete={handleDelete}
+            />
+          ) : (
+            ""
+          )}
           <Product product={Data} addToCart={addToCart} />
         </Container>
       </>

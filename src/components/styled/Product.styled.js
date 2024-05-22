@@ -158,7 +158,7 @@ padding: 90px 24px;
       transition: all 125ms ease-in-out;
 
       &:hover {
-        background-color: ${({ theme }) => theme.colors.primary.paleOrange};
+        background-color: ${({ theme }) => theme.colors.primary.orangeHover};
       }
 
       img {

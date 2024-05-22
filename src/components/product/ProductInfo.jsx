@@ -7,6 +7,7 @@ const ProductInfo = ({ product, addToCart }) => {
   const handleAddToCart = () => {
     if (quantity > 0) {
       addToCart({ ...product, quantity });
+      setQuantity(0);
     }
   };
 
@@ -47,7 +48,11 @@ const ProductInfo = ({ product, addToCart }) => {
           </button>
         </div>
 
-        <button type="submit" className="add-to-cart" onClick={handleAddToCart}>
+        <button
+          type="submit"
+          className="btn add-to-cart"
+          onClick={handleAddToCart}
+        >
           <img src="src/assets/icon-cart.svg" alt="" />
           <p>Add to Cart</p>
         </button>
