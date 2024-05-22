@@ -6,6 +6,7 @@ import Header from "./components/header/Header";
 import Product from "./components/product/Product";
 import MiniCart from "./components/cart/MiniCart";
 import Data from "./components/product/Data";
+import Modal from "./components/modal/Modal";
 
 const theme = {
   colors: {
@@ -56,6 +57,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <>
+        <Modal />
         <Container>
           <Header
             addToCart={addToCart}
