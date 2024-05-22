@@ -1,12 +1,13 @@
 import { StyledProduct } from "../styled/Product.styled";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
+import Data from "./Data";
 
-const Product = () => {
+const Product = ({ addToCart }) => {
   return (
     <StyledProduct>
       <ProductImage />
-      <ProductInfo />
+      <ProductInfo product={Data} addToCart={addToCart} />
     </StyledProduct>
   );
 };

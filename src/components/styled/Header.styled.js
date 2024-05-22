@@ -70,7 +70,19 @@ export const StyledHeader = styled.header`
   }
 
   .header-right {
+    position: relative;
+
+    .indicator {
+      background-color: ${({ theme }) => theme.colors.primary.orange};
+      border-radius: 50%;
+      height: 8px;
+      position: absolute;
+      transform: translate(16px, -8px);
+      width: 8px;
+    }
+
     .cart {
+      cursor: pointer;
       margin-right: 40px;
     }
     .avatar {

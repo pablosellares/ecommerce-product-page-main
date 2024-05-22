@@ -1,10 +1,11 @@
 import Logo from "../common/Logo";
 import { StyledHeader } from "../styled/Header.styled";
 import Avatar from "./Avatar";
-import Cart from "./Cart";
 import Nav from "./Nav";
+import Cart from "./Cart";
+import Indicator from "./Indicator";
 
-const Header = () => {
+const Header = ({ addToCart, handleCart }) => {
   return (
     <StyledHeader>
       <div className="header-left">
@@ -12,7 +13,8 @@ const Header = () => {
         <Nav />
       </div>
       <div className="header-right">
-        <Cart />
+        <Indicator addToCart={addToCart} />
+        <Cart handleCart={handleCart} />
         <Avatar />
       </div>
     </StyledHeader>

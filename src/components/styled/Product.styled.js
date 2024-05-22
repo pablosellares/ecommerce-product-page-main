@@ -82,7 +82,7 @@ padding: 90px 24px;
   &_price {
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 
     p {
       font-size: 21px;

@@ -1,10 +1,9 @@
-import React from "react";
-
-const Cart = () => {
+const Cart = ({ handleCart }) => {
   return (
-    <a href="/" className="cart">
+    <div className="cart" onClick={handleCart}>
+      <ul></ul>
       <img src="src/assets/icon-cart.svg" alt="" />
-    </a>
+    </div>
   );
 };
 

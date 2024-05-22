@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import Header from "./components/header/Header";
 import { Container } from "./components/styled/Container.styled";
 import GlobalStyles from "./components/styled/Global";
+import Header from "./components/header/Header";
 import Product from "./components/product/Product";
+import MiniCart from "./components/cart/MiniCart";
+import Data from "./components/product/Data";
 
 const theme = {
   colors: {
@@ -23,13 +26,31 @@ const theme = {
 };
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+  const [hasQuantity, setHasQuantity] = useState(false);
+  const [isCartActive, setIsCartActive] = useState(false);
+
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+    setHasQuantity(true);
+  };
+
+  const handleCart = () => {
+    if (!isCartActive) {
+      setIsCartActive(true);
+    } else {
+      setIsCartActive(false);
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <>
         <Container>
-          <Header />
-          <Product />
+          <Header addToCart={addToCart} handleCart={handleCart} />
+          {isCartActive ? <MiniCart cartItems={cartItems} /> : ""}
+          <Product product={Data} addToCart={addToCart} />
         </Container>
       </>
     </ThemeProvider>
