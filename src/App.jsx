@@ -12,6 +12,7 @@ const theme = {
   colors: {
     primary: {
       orange: "hsl(26, 100%, 55%)",
+      orangeTransluscent: "hsl(26, 100%, 55%, 50%)",
       orangeHover: "hsl(26, 100%, 45%)",
       paleOrange: "hsl(25, 100%, 94%)",
     },
@@ -52,6 +53,7 @@ function App() {
 
   const handleCheckout = () => {
     setCartItems([]);
+    setIsCartActive(false);
   };
 
   const handleModal = () => {

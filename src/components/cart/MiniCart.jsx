@@ -6,7 +6,7 @@ const MiniCart = ({ cartItems, handleCheckout, handleDelete }) => {
       <h2>Cart</h2>
       <div className="cart-wrapper">
         {cartItems.length === 0 ? (
-          <p>No items in cart</p>
+          <p>Your cart is empty.</p>
         ) : (
           <ul>
             {cartItems.map((item, index) => (
@@ -33,9 +33,13 @@ const MiniCart = ({ cartItems, handleCheckout, handleDelete }) => {
           </ul>
         )}
       </div>
-      <button type="submit" className="btn-checkout" onClick={handleCheckout}>
-        Checkout
-      </button>
+      {cartItems.length === 0 ? (
+        ""
+      ) : (
+        <button type="submit" className="btn-checkout" onClick={handleCheckout}>
+          Checkout
+        </button>
+      )}
     </StyledCart>
   );
 };

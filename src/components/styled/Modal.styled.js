@@ -1,23 +1,25 @@
 import styled from "styled-components";
 
 export const StyledModal = styled.div`
+align-items: center;
   background-color: ${({ theme }) => theme.colors.neutral.black75};
   display: flex;
+  flex-direction: column;
   height: 100%;
   justify-content: center;
   left: 0;
-  padding: 15%;
   position: absolute;
+  row-gap: 24px;
   top: 0;
   width: 100%;
   z-index: 999;
 
   .btn-close {
         cursor: pointer;
-        display: inline-block;
+        display: flex;
+        justify-content: flex-end;
         height: 24px;
-        margin-top: -48px;
-        margin-left: -24px;
+        margin-right: -50%;
         overflow: hidden;
         position: relative;
         width: 24px;
@@ -28,7 +30,6 @@ export const StyledModal = styled.div`
           content: "";
           display: block;
           height: 100%;
-          margin-top: -2px;
           width: 4px;
         }
 
@@ -46,36 +47,45 @@ export const StyledModal = styled.div`
       }
 
   .product-image {
-  padding: 0;
-  width: 50%;
-  
+    padding: 0;
+    position: relative;
+    width: 50%;
+
   &_frame {
     margin-bottom: 32px;
     width: 100%;
     position: relative;
 
-    &::before,
-    &::after {
-      border-radius: 50%;
-      content: "";
-      cursor: pointer;
-      height: 57px;
-      position: absolute;
-      width: 57px;
-    }
+    &__control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-24px);
+        width: 100%;
+        z-index: 1000;
 
-    &::before {
-      background: url('src/assets/icon-previous.svg') center no-repeat ${({ theme }) => theme.colors.neutral.white};
-      top: 50%;
-      transform: translate(-50%,-50%);
-    }
+          &--prev,
+          &--next {
+            border-radius: 50%;
+            content: "";
+            cursor: pointer;
+            height: 48px;
+            position: absolute;
+            width: 48px;
+          }
 
-    &::after {
-      background: url('src/assets/icon-next.svg') center no-repeat ${({ theme }) => theme.colors.neutral.white};
-      bottom: 50%;
-      right: 0;
-      transform: translate(50%, 50%);
-    }
+          &--prev {
+            background: url('src/assets/icon-previous.svg') center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            left: -24px;
+            position: absolute;
+            top: 50%;
+          }
+
+          &--next {
+            background: url('src/assets/icon-next.svg') center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            right: -24px;
+            top: 50%;
+          }
+  }
 
     img {
       border-radius: 16px;

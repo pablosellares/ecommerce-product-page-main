@@ -105,4 +105,13 @@ export const StyledHeader = styled.header`
       }
     }
   }
+
+  @media screen and (max-width: 768px){
+    
+    padding: 0 24px;
+    height: 68px;
+      nav {
+          display: none;
+        }
+  }
 `

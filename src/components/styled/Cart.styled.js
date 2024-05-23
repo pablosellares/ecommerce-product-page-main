@@ -16,7 +16,9 @@ width: 360px;
   /* overflow-y: scroll; */
 
   p{ 
+    color: ${({ theme }) => theme.colors.neutral.darkGrayishBlue};
     font-size: 14px;
+    font-weight: 700;
   }
 
   .cart-description {
@@ -81,4 +83,29 @@ h2 {
         font-weight: 700;
       }
     }
+
+    @media screen and (max-width: 768px){
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      left: 2.5%;
+      right: auto;
+      top: 80px;
+      width: 95%;
+      z-index: 11;
+
+      .cart-wrapper {
+        display: flex;
+        justify-content: center;
+
+        .cart-description {
+          padding-right: 16px;
+        }
+
+        p {
+          color: ${({ theme }) => theme.colors.neutral.darkGrayishBlue};
+          font-weight: 700;
+        }
+      }
+  }
 `

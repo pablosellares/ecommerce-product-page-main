@@ -30,12 +30,14 @@ const ProductInfo = ({ product, addToCart }) => {
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
       </p>
-      <div className="product-info_price">
-        <p className="product-info_price--final">${Data.price}</p>
-        <span className="product-info_price--discount">{Data.discount}%</span>
-      </div>
-      <div className="product-info_price--old">
-        <p>${Data.oldPrice}</p>
+      <div className="product-info_price--wrapper">
+        <div className="product-info_price">
+          <p className="product-info_price--final">${Data.price}</p>
+          <span className="product-info_price--discount">{Data.discount}%</span>
+        </div>
+        <div className="product-info_price--old">
+          <p>${Data.oldPrice}</p>
+        </div>
       </div>
       <div className="product-info_actions">
         <div className="qty">
@@ -47,7 +49,6 @@ const ProductInfo = ({ product, addToCart }) => {
             <img src="src/assets/icon-plus.svg" alt="" />
           </button>
         </div>
-
         <button
           type="submit"
           className="btn add-to-cart"
