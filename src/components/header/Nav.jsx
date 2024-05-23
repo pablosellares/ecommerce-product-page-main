@@ -1,23 +1,49 @@
+import { useState } from "react";
+
 const Nav = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <nav>
-      <ul>
-        <li>
-          <a href="/">Collections</a>
-        </li>
-        <li>
-          <a href="/">Men</a>
-        </li>
-        <li>
-          <a href="/">Women</a>
-        </li>
-        <li>
-          <a href="/">About</a>
-        </li>
-        <li>
-          <a href="/">Contact</a>
-        </li>
-      </ul>
+      {isMobileMenuOpen ? (
+        <div className="nav-backdrop" onClick={toggleMobileMenu}></div>
+      ) : (
+        ""
+      )}
+
+      <div className="nav-container">
+        <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
+          <img
+            src={`${
+              isMobileMenuOpen
+                ? "src/assets/icon-close.svg"
+                : "src/assets/icon-menu.svg"
+            }`}
+            alt=""
+          />
+        </div>
+        <ul className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
+          <li>
+            <a href="/">Collections</a>
+          </li>
+          <li>
+            <a href="/">Men</a>
+          </li>
+          <li>
+            <a href="/">Women</a>
+          </li>
+          <li>
+            <a href="/">About</a>
+          </li>
+          <li>
+            <a href="/">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
