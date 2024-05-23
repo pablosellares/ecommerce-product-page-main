@@ -189,7 +189,7 @@ padding: 90px 24px;
 
         &__control {
         position: absolute;
-        top: 20%;
+        top: 30%;
         transform: translateY(-24px);
         width: 100%;
         z-index: 10;

@@ -28,7 +28,14 @@ export const StyledHeader = styled.header`
       padding: 0 50px;
       width: 100%;
 
-      ul {
+      .nav-container {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links {
         align-items: center;
         display: flex;
         height: 100%;
@@ -58,13 +65,18 @@ export const StyledHeader = styled.header`
             }
 
             &:hover {
-
               &::after {
                 height: 4px;
-            }
+              }
             }
           }
         }
+      }
+
+      .mobile-menu-icon {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
       }
     }
   }
@@ -109,9 +121,64 @@ export const StyledHeader = styled.header`
   @media screen and (max-width: 768px){
     
     padding: 0 24px;
+    position: relative;
     height: 68px;
+
+    .header-left {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
       nav {
-          display: none;
+        padding: 0;
+        margin-right: 16px;
+        width: auto;
+        .nav-backdrop {
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color:  ${({ theme }) => theme.colors.neutral.black75};
+          z-index: 99;
         }
+        .nav-container {
+          position: relative;
+          .mobile-menu-icon {
+            display: flex;
+            z-index: 101;
+          }
+          .nav-links {
+            background-color: ${({ theme }) => theme.colors.neutral.white};
+            display: none;
+            padding: 68px 0;
+            position: absolute;
+            width: 75vw;
+            height: 100vh;
+            flex-direction: column;
+            top: 0;
+            left: -24px;
+            z-index: 100;
+
+            li {
+              height: 32px;
+              font-weight: 700;
+              padding-left: 24px;
+              text-align: left;
+              width: 100%;
+              margin: 0;
+            }
+
+            &.mobile-open {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+    .header-right {
+      .cart {
+      margin-right: 20px;
+    }
+    }
+
   }
 `

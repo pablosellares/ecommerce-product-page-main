@@ -19,7 +19,7 @@ align-items: center;
         display: flex;
         justify-content: flex-end;
         height: 24px;
-        margin-right: -50%;
+        margin-right: -35%;
         overflow: hidden;
         position: relative;
         width: 24px;
@@ -49,7 +49,7 @@ align-items: center;
   .product-image {
     padding: 0;
     position: relative;
-    width: 50%;
+    width: 40%;
 
   &_frame {
     margin-bottom: 32px;

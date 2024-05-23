@@ -1,9 +1,13 @@
 import { useState } from "react";
+import useWindowSize from "../utils/UseWindowSize";
 import Data from "./Data";
 
 const ProductImage = ({ handleModal }) => {
   const [selectedImage, setSelectedImage] = useState(Data.main);
   const [activeIndex, setActiveIndex] = useState(0);
+  const { width } = useWindowSize();
+
+  const isMobile = width <= 768; // Define your mobile breakpoint
 
   const handleThumbnailClick = (image, index) => {
     setSelectedImage(image);
@@ -26,6 +30,12 @@ const ProductImage = ({ handleModal }) => {
     }
   };
 
+  const handleImageClick = () => {
+    if (!isMobile) {
+      handleModal();
+    }
+  };
+
   return (
     <>
       <div className="product-image">
@@ -43,7 +53,7 @@ const ProductImage = ({ handleModal }) => {
           <img
             src={selectedImage}
             alt="Selected Product"
-            onClick={handleModal}
+            onClick={handleImageClick}
           />
         </div>
 
