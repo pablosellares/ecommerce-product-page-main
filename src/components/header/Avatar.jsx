@@ -1,9 +1,9 @@
-import React from "react";
+import avatarImg from "../../assets/image-avatar.png";
 
 const Avatar = () => {
   return (
     <a href="/" className="avatar">
-      <img src="src/assets/image-avatar.png" alt="" />
+      <img src={avatarImg} alt="" />
     </a>
   );
 };

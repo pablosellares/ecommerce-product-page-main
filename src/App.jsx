@@ -8,6 +8,9 @@ import MiniCart from "./components/cart/MiniCart";
 import Modal from "./components/modal/Modal";
 import Data from "./components/product/Data";
 
+import iconPrev from "./assets/icon-previous.svg";
+import iconNext from "./assets/icon-next.svg";
+
 const theme = {
   colors: {
     primary: {
@@ -24,6 +27,14 @@ const theme = {
       white: "hsl(0, 0%, 100%)",
       black: "hsla(0, 0%, 0%)",
       black75: "hsla(0, 0%, 0%,.75)",
+    },
+  },
+  images: {
+    icons: {
+      prev: "./src/assets/icon-previous.svg",
+      next: "./src/assets/icon-previous.svg",
+      close: "./src/assets/icon-close.svg",
+      menu: "./src/assets/icon-menu.svg",
     },
   },
 };

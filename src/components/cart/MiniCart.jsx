@@ -1,4 +1,6 @@
 import { StyledCart } from "../styled/Cart.styled";
+import { getImageURL } from "../utils/getImage";
+import deleteImg from "../../assets/icon-delete.svg";
 
 const MiniCart = ({ cartItems, handleCheckout, handleDelete }) => {
   return (
@@ -12,7 +14,7 @@ const MiniCart = ({ cartItems, handleCheckout, handleDelete }) => {
             {cartItems.map((item, index) => (
               <li key={index} style={{ display: "flex", alignItems: "center" }}>
                 <img
-                  src={item.main}
+                  src={getImageURL(item.main)}
                   alt=""
                   width={50}
                   style={{ borderRadius: "4px" }}
@@ -23,7 +25,7 @@ const MiniCart = ({ cartItems, handleCheckout, handleDelete }) => {
                 </div>
                 <div className="cart-delete" onClick={handleDelete}>
                   <img
-                    src="src/assets/icon-delete.svg"
+                    src={deleteImg}
                     alt="Delete item"
                     title="Delete Item from Cart"
                   />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useWindowSize from "../utils/UseWindowSize";
 import Data from "./Data";
+import { getImageURL } from "../utils/getImage";
 
 const ProductImage = ({ handleModal }) => {
   const [selectedImage, setSelectedImage] = useState(Data.main);
@@ -51,7 +52,7 @@ const ProductImage = ({ handleModal }) => {
             ></div>
           </div>
           <img
-            src={selectedImage}
+            src={getImageURL(selectedImage)}
             alt="Selected Product"
             onClick={handleImageClick}
           />
@@ -66,7 +67,7 @@ const ProductImage = ({ handleModal }) => {
               }`}
             >
               <img
-                src={image}
+                src={getImageURL(image)}
                 alt={`Thumbnail ${index + 1}`}
                 className="thumbnail"
                 onClick={() => handleThumbnailClick(image, index)}

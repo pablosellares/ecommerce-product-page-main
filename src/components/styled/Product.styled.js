@@ -205,14 +205,14 @@ padding: 90px 24px;
           }
 
           &--prev {
-            background: url('src/assets/icon-previous.svg') center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            background: url(${({ theme }) => theme.images.icons.prev})center no-repeat ${({ theme }) => theme.colors.neutral.white};
             left: 24px;
             position: absolute;
             top: 50%;
           }
 
           &--next {
-            background: url('src/assets/icon-next.svg') center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            background: url(${({ theme }) => theme.images.icons.next}) center no-repeat ${({ theme }) => theme.colors.neutral.white};
             right: 24px;
             top: 50%;
           }

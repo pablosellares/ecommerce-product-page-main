@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Data from "./Data";
+import cartImg from "../../assets/icon-cart.svg";
+import iconPlusImg from "../../assets/icon-plus.svg";
+import iconMinusImg from "../../assets/icon-minus.svg";
 
 const ProductInfo = ({ product, addToCart }) => {
   const [quantity, setQuantity] = useState(0);
@@ -42,11 +45,11 @@ const ProductInfo = ({ product, addToCart }) => {
       <div className="product-info_actions">
         <div className="qty">
           <button className="qty-decrease" onClick={decreaseQuantity}>
-            <img src="src/assets/icon-minus.svg" alt="" />
+            <img src={iconMinusImg} alt="" />
           </button>
           <span className="counter">{quantity}</span>
           <button className="qty-increase" onClick={increaseQuantity}>
-            <img src="src/assets/icon-plus.svg" alt="" />
+            <img src={iconPlusImg} alt="" />
           </button>
         </div>
         <button
@@ -54,7 +57,7 @@ const ProductInfo = ({ product, addToCart }) => {
           className="btn add-to-cart"
           onClick={handleAddToCart}
         >
-          <img src="src/assets/icon-cart.svg" alt="" />
+          <img src={cartImg} alt="" />
           <p>Add to Cart</p>
         </button>
       </div>

@@ -20,6 +20,7 @@ export const StyledHeader = styled.header`
 
     .logo {
       height: 20px;
+      z-index: 101;
     }
 
     nav {

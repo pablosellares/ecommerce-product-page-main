@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import iconMenu from "../../assets/icon-menu.svg";
+import iconClose from "../../assets/icon-close.svg";
+
 const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -18,11 +21,7 @@ const Nav = () => {
       <div className="nav-container">
         <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
           <img
-            src={`${
-              isMobileMenuOpen
-                ? "src/assets/icon-close.svg"
-                : "src/assets/icon-menu.svg"
-            }`}
+            src={`${isMobileMenuOpen ? `${iconClose}` : `${iconMenu}`}`}
             alt=""
           />
         </div>
