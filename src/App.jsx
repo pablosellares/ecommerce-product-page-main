@@ -31,10 +31,10 @@ const theme = {
   },
   images: {
     icons: {
-      prev: "./src/assets/icon-previous.svg",
-      next: "./src/assets/icon-previous.svg",
-      close: "./src/assets/icon-close.svg",
-      menu: "./src/assets/icon-menu.svg",
+      prev: `${iconPrev}`,
+      next: `${iconNext}`,
+      close: "./assets/icon-close.svg",
+      menu: "./assets/icon-menu.svg",
     },
   },
 };

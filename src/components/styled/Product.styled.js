@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import iconPrev from "../../assets/icon-previous.svg"
+import iconNext from "../../assets/icon-next.svg"
 
 export const StyledProduct = styled.main`
 display: flex;
@@ -14,6 +16,10 @@ padding: 90px 24px;
     cursor: pointer;
     margin-bottom: 32px;
     width: 100%;
+
+    &__control {
+      display: none;
+    }
 
     img {
       border-radius: 16px;
@@ -188,6 +194,7 @@ padding: 90px 24px;
         margin: 0;
 
         &__control {
+        display: block;
         position: absolute;
         top: 30%;
         transform: translateY(-24px);
@@ -205,14 +212,20 @@ padding: 90px 24px;
           }
 
           &--prev {
-            background: url(${({ theme }) => theme.images.icons.prev})center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            align-items: center;
+            background-color: ${({ theme }) => theme.colors.neutral.white};
+            display: flex;
+            justify-content: center;
             left: 24px;
             position: absolute;
             top: 50%;
           }
 
           &--next {
-            background: url(${({ theme }) => theme.images.icons.next}) center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            align-items: center;
+            background-color: ${({ theme }) => theme.colors.neutral.white};
+            display: flex;
+            justify-content: center;
             right: 24px;
             top: 50%;
           }

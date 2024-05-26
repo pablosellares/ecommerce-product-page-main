@@ -76,14 +76,20 @@ align-items: center;
           }
 
           &--prev {
-            background: url(${({ theme }) => theme.images.icons.prev}) center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background-color: ${({ theme }) => theme.colors.neutral.white};
             left: -24px;
             position: absolute;
             top: 50%;
           }
 
           &--next {
-            background: url(${({ theme }) => theme.images.icons.next}) center no-repeat ${({ theme }) => theme.colors.neutral.white};
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background-color: ${({ theme }) => theme.colors.neutral.white};
             right: -24px;
             top: 50%;
           }
